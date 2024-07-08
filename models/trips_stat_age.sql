@@ -1,8 +1,13 @@
- with cte as (
- select round((started_at::date-birth_date)/365,0) as age,started_at::date date,count(distinct t.id) as trips from scooters_raw.trips t 
-join scooters_raw.users u on u.id=t.user_id 
-group by round((started_at::date-birth_date)/365,0),date)
-
-select age,avg(trips) as avg_trips  from cte
+with
+    cte as (
+        select
+            date(t.started_at) as date,
+            extract(year from t.started_at) - extract(year from u.birth_date) as age
+        from scooters_raw.trips as t
+        inner join scooters_raw.users as u on t.user_id = u.id
+    ),
+    count_cte as (select date, age, count(*) as trips from cte group by 1, 2)
+select age, avg(trips) as avg_trips
+from count_cte
 group by age
-order by 1
+order by age
