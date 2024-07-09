@@ -33,3 +33,5 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   dbt_scooters:
       +materialized: table
+      trips_prep:
+        +materialized: view
