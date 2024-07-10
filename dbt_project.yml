@@ -1,6 +1,6 @@
 name: "dbt_scooters"
 version: "1.0.0"
-config-version: 2
+config-version: 3
 
 # This setting configures which "profile" dbt uses for this project.
 profile: "default"
@@ -32,15 +32,3 @@ clean-targets: # directories to be removed by `dbt clean`
 models:
   dbt_scooters:
     +materialized: table
-    trips_prep:
-      +materialized: view
-    trips_stat:
-      description: "Scooter trips statistics"
-      +materialized: view
-      config:
-      indexes:
-        - columns: ["date"]
-    trips_age_daily:
-      +materialized: view
-    trips_age_daily_stat:
-      +materialized: view
