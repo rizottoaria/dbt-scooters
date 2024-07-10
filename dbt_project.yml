@@ -35,3 +35,6 @@ models:
       +materialized: table
       trips_prep:
         +materialized: view
+      trips_stat:
+        description: "Scooter trips statistics"
+        +materialized: view
