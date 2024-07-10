@@ -42,3 +42,5 @@ models:
         - columns: ["date"]
     trips_age_daily:
       +materialized: view
+    trips_age_daily_stat:
+      +materialized: view
