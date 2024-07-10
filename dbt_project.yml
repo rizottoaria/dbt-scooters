@@ -40,3 +40,5 @@ models:
       config:
       indexes:
         - columns: ["date"]
+    trips_age_daily:
+      +materialized: view
