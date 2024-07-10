@@ -1,4 +1,4 @@
-version: 2
+version: 3
 
 sources:
   - name: "scooters_raw"
@@ -9,3 +9,7 @@ sources:
         description: "Scooter trips"
       - name: "users"
         description: "Users of scooter service"
+    models:
+      - name: "trips_stat"
+        description: "Scooter trips statistics"
+        +materialized: view

@@ -1,6 +1,8 @@
-SELECT 
-count(distinct t.id) trips,count(distinct t.user_id) users,
-avg(extract(epoch from (finished_at -started_at))/60) avg_duration_m,   
-sum(t.price)/100 revenue_rub,
-count(distinct t.id) filter (where t.price=0)*1.0/count(distinct t.id) free_trips_pct
-FROM scooters_raw.trips t 
+select
+    count(distinct id) trips,
+    count(distinct user_id) users,
+    avg(duration_s) avg_duration_m,
+    sum(price_rub) revenue_rub,
+    sum(is_free) * 1.0 / count(*) free_trips_pct,
+    sum(distance_m) / 1000 sum_distance_km
+from {{ ref("trips_prep") }}
