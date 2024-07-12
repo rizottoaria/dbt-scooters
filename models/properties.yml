@@ -1,5 +1,4 @@
 version: 4
-
 sources:
   - name: "scooters_raw"
     description: "Raw data provided by scooters service"
@@ -10,17 +9,17 @@ sources:
       - name: "users"
         description: "Users of scooter service"
 models:
-    trips_prep:
-        +materialized: view
-    trips_stat:
-      description: "Scooter trips statistics"
-      +materialized: view
-      config:
+  - name: trips_prep
+    +materialized: view
+  - name: trips_stat
+    description: "Scooter trips statistics"
+    +materialized: view
+    config:
       indexes:
         - columns: ["date"]
-    trips_age_daily:
-      description: "Daily trips statistics by user age"
-      +materialized: view
-    trips_age_daily_stat:
-        description: "Aggregated daily trips statistics by user age"
-        +materialized: view
+  - name: trips_age_daily
+    description: "Daily trips statistics by user age"
+    +materialized: view
+  - name: trips_age_daily_stat
+    description: "Aggregated daily trips statistics by user age"
+    +materialized: view
