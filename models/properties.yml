@@ -14,9 +14,6 @@ models:
   - name: trips_stat
     description: "Scooter trips statistics"
     +materialized: table
-    config:
-      indexes:
-        - columns: ["date"]
   - name: trips_age_daily
     description: "Daily trips statistics by user age"
     +materialized: view
