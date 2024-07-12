@@ -23,3 +23,6 @@ models:
   - name: trips_age_daily_stat
     description: "Aggregated daily trips statistics by user age"
     +materialized: view
+  - name: trips_geom
+    description: "Table with points"
+    +materialized: table
