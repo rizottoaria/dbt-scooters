@@ -13,7 +13,7 @@ models:
     +materialized: view
   - name: trips_stat
     description: "Scooter trips statistics"
-    +materialized: view
+    +materialized: table
     config:
       indexes:
         - columns: ["date"]
