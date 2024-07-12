@@ -26,3 +26,5 @@ models:
   - name: trips_geom
     description: "Table with points"
     +materialized: table
+  - name: parking_start_stat
+    description: "Trip start parking statistics by 500 m hexagons"
