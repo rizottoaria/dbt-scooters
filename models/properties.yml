@@ -10,7 +10,11 @@ sources:
         description: "Users of scooter service"
 models:
   - name: trips_prep
-    +materialized: view
+    +materialized: table
+    config:
+      +indexes:
+        - columns: ['date']
+          type: hash
   - name: trips_stat
     description: "Scooter trips statistics"
     +materialized: table
@@ -25,3 +29,8 @@ models:
     +materialized: table
   - name: parking_start_stat
     description: "Trip start parking statistics by 500 m hexagons"
+    +materialized: table
+  - name: parking_finish_stat
+    description: "Trip start parking statistics by 10 m hexagons at finish"
+    +materialized: table
+    
