@@ -10,7 +10,11 @@ sources:
         description: "Users of scooter service"
 models:
   - name: trips_prep
-    +materialized: view
+    +materialized: table
+    config:
+      +indexes:
+        - columns: ['date']
+          type: hash
   - name: trips_stat
     description: "Scooter trips statistics"
     +materialized: table
