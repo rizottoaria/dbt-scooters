@@ -13,7 +13,7 @@ models:
     +materialized: table
     config:
       +indexes:
-        - columns: ['date']
+        - columns: ["date"]
           type: hash
   - name: trips_stat
     description: "Scooter trips statistics"
@@ -33,4 +33,7 @@ models:
   - name: parking_finish_stat
     description: "Trip start parking statistics by 10 m hexagons at finish"
     +materialized: table
-    
+  - name: trips_users
+    description: "Trips prepare with sex and age"
+    config:
+      materialized: "incremental"
