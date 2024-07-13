@@ -29,3 +29,8 @@ models:
     +materialized: table
   - name: parking_start_stat
     description: "Trip start parking statistics by 500 m hexagons"
+    +materialized: table
+  - name: parking_finish_stat
+    description: "Trip start parking statistics by 10 m hexagons at finish"
+    +materialized: table
+    
