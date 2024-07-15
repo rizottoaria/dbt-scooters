@@ -39,3 +39,7 @@ models:
     description: "Trips prepare with sex and age"
     config:
       materialized: "incremental"
+  - name: events_clean
+    description: "events with cleanup"
+    config:
+      materialized: "incremental"
