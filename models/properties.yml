@@ -43,3 +43,7 @@ models:
     description: "events with cleanup"
     config:
       materialized: "incremental"
+  - name: revenue_daily
+    description: "Revenue by all"
+    config:
+      materialized: "incremental"
