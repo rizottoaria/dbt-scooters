@@ -8,6 +8,8 @@ sources:
         description: "Scooter trips"
       - name: "users"
         description: "Users of scooter service"
+      - name: "events"
+        description: "Events of scooter service timeline"
 models:
   - name: trips_prep
     +materialized: table
@@ -35,5 +37,9 @@ models:
     +materialized: table
   - name: trips_users
     description: "Trips prepare with sex and age"
+    config:
+      materialized: "incremental"
+  - name: events_clean
+    description: "events with cleanup"
     config:
       materialized: "incremental"
