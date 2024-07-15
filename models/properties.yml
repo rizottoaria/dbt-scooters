@@ -8,6 +8,8 @@ sources:
         description: "Scooter trips"
       - name: "users"
         description: "Users of scooter service"
+      - name: "events"
+        description: "Events of scooter service timeline"
 models:
   - name: trips_prep
     +materialized: table
