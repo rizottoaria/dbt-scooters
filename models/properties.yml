@@ -49,3 +49,4 @@ models:
       materialized: "incremental"
       strategy: "merge"
       unique_key: "date"
+      on_schema_change: append_new_columns
