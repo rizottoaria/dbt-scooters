@@ -47,3 +47,5 @@ models:
     description: "Revenue by all"
     config:
       materialized: "incremental"
+      strategy: "merge"
+      unique_key: "date"
