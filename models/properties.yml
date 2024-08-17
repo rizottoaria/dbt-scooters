@@ -59,3 +59,7 @@ models:
     +materialized: table
   - name: companies_trips
     description: "Trip satistics by company"
+  - name: trips_age_group
+    description: "Age group statistics"
+    +materialized: table
+  
