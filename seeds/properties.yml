@@ -7,3 +7,5 @@ seeds:
       delimiter: ","
   - name: "age_groups"
     description: "Scooter customers grouped by age categories"
+  - name: "event_types"
+    description: "Events for customers"
