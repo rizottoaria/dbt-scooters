@@ -64,4 +64,6 @@ models:
     +materialized: table
   - name: events_full
     description: "Clean events with names"
+  - name: events_stat
+    description: "Cancelation search percent"
   
