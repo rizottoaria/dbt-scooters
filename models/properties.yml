@@ -62,4 +62,6 @@ models:
   - name: trips_age_group
     description: "Age group statistics"
     +materialized: table
+  - name: events_full
+    description: "Clean events with names"
   
