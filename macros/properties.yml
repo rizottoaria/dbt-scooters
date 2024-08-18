@@ -1,5 +1,7 @@
-version: 1
+version: 2
 
 macros:
   - name: "updated_at"
     description: "Columns which represents timestamp of the last update"
+  - name: "date_in_moscow"
+    description: "convert time to time in Moscow"
